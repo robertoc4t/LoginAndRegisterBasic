@@ -2,12 +2,16 @@ package org.example;
 
 import javax.sql.DataSource;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
+@Configuration
 public class DataConfiguration {
     
+    @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
@@ -17,6 +21,7 @@ public class DataConfiguration {
         return dataSource;
         }
 
+    @Bean
     public JpaVendorAdapter jpavendorAdaptor(){
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(org.springframework.orm.jpa.vendor.Database.MYSQL);
