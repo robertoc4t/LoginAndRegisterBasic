@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <style>
+        /* Define as cores da paleta como variáveis para fácil reutilização */
+        :root {
+            --dark-purple: #5B366B;
+            --medium-purple: #783296;
+            --bright-purple: #9020C0;
+            --accent-purple: #A400EB;
+            --text-color: #f0f0f0;
+        }
+
+        /* Estilos Globais e Background */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--dark-purple), var(--medium-purple));
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0; /* Adiciona um padding para evitar que o form cole nas bordas em telas menores */
+        }
+
+        /* Container do Formulário de Cadastro */
+        .signup-container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .signup-form h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--text-color);
+        }
+
+        /* Grupo de Input (Label + Campo) */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--text-color);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-bottom-color: var(--accent-purple);
+        }
+
+        /* Botão de Cadastro */
+        .signup-button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px; /* Espaço extra acima do botão */
+            border: none;
+            border-radius: 8px;
+            background-color: var(--bright-purple);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .signup-button:hover {
+            background-color: var(--accent-purple);
+        }
+
+        .signup-button:active {
+            transform: scale(0.98);
+        }
+        
+        /* Link para a tela de Login */
+        .login-link {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .login-link a:hover {
+            color: var(--accent-purple);
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <form class="signup-form">
+            <h1>Criar Conta</h1>
+
+            <div class="input-group">
+                <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Senha" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Senha" required>
+            </div>
+
+            <button type="submit" class="signup-button">Cadastrar</button>
+
+            <p class="login-link">
+                Já tem uma conta? <a href="#">Faça Login</a>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
